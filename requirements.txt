@@ -1,0 +1,19 @@
+# FastAPI
+fastapi==0.110.0
+uvicorn[standard]==0.29.0
+
+# Data validation
+pydantic==2.6.4
+
+# LLM
+openai==1.14.3
+
+# Async HTTP client
+httpx==0.27.0
+
+# Env 관리
+python-dotenv==1.0.1
+
+# Logging & utils
+orjson==3.10.1
+#pip install -r requirements.txt
