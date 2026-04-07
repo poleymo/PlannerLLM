@@ -1,0 +1,15 @@
+from fastapi import APIRouter, Depends
+from app.api.dependent_manager import get_agent_service
+from app.service.agentService import AgentService
+from pydantic import BaseModel
+
+router = APIRouter()
+
+
+class PlanRequest(BaseModel):
+    instruction: str
+
+
+@router.post("/plan")
+def plan(req: PlanRequest, service: AgentService = Depends(get_agent_service)):
+    return service.generate_plan(req.instruction)
