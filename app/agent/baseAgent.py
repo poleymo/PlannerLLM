@@ -7,3 +7,6 @@ class BaseAgent:
 
     def run(self, *args, **kwargs):
         raise NotImplementedError
+
+    def run_prompt(self, *args, **kwargs):
+        raise NotImplementedError

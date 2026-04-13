@@ -13,3 +13,7 @@ class PlanRequest(BaseModel):
 @router.post("/plan")
 def plan(req: PlanRequest, service: AgentService = Depends(get_agent_service)):
     return service.generate_plan(req.instruction)
+
+@router.post("/plan-prompt")
+def plan_prompt(req: PlanRequest, prompt:str, service: AgentService = Depends(get_agent_service)):
+    return service.generate_plan_prompt(req.instruction, prompt)
