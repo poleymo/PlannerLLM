@@ -124,13 +124,12 @@ class IntentParser(BaseAgent):
 
         return json.loads(result)
 
-    def run_prompt(self, instruction: str, prompt:str):
+    def run_prompt(self, instruction: str, prompt:dict):
 
-        prompt_data = json.loads(prompt)
-        prompt_data["instruction"] = instruction
+        prompt["instruction"] = instruction
 
 
-        prompt = json.dumps(prompt_data, ensure_ascii=False, indent=2)
+        prompt = json.dumps(prompt, ensure_ascii=False, indent=2)
         # pretty_json = json.dumps(json.loads(result), indent=4, ensure_ascii=False)
 
         result = self.llm.generate(prompt)

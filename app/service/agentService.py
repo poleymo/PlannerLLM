@@ -8,5 +8,5 @@ class AgentService:
     def generate_plan(self, instruction:str):
         return self.agent.run(instruction)
 
-    def generate_plan_prompt(self, instruction:str, prompt:str):
+    def generate_plan_prompt(self, instruction:str, prompt:dict):
         return self.agent.run_prompt(instruction, prompt)
