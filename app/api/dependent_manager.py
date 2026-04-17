@@ -7,7 +7,7 @@ from app.service.agentService import AgentService
 
 
 @lru_cache
-def get_agent_service():
+def get_intent_service():
     return AgentService(get_intent_parser())
 
 @lru_cache
